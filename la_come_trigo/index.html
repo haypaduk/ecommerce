@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watchdive Megamart - Tienda Online</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 
+        =====================================================
+        ENCABEZADO (HEADER) - Barra de navegación principal
+        Contiene: logo, menú hamburguesa, buscador, botones de auth y carrito
+        =====================================================
+    -->
+    <header>
+        <div class="header-container">
+            <!-- Área del logo con menú hamburguesa -->
+            <div class="logo-area">
+                <!-- Icono de menú hamburguesa (☰) - Controla la apertura del menú lateral -->
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                <!-- Logo de la tienda con estilo destacado -->
+                <div class="logo">watchdive<span> Megamart!</span></div>
+            </div>
+            
+            <!-- Barra de búsqueda principal -->
+            <div class="search-bar">
+                <!-- Input de búsqueda con placeholder descriptivo -->
+                <input type="text" placeholder="Search essentials, groceries and more.">
+                <!-- Botón de búsqueda con icono de lupa -->
+                <button>🔍</button>
+            </div>
+            
+            <!-- Acciones del usuario (autenticación y carrito) -->
+            <div class="header-actions">
+                <!-- Botón para iniciar sesión/registrarse -->
+                <button class="auth-btn" onclick="showAuth()">Sign Up/Sign In</button>
+                <!-- Icono del carrito con contador de productos -->
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒
+                    <!-- Contador dinámico de productos en el carrito -->
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 
+        =====================================================
+        MENÚ LATERAL (SIDE MENU) - Menú desplegable de categorías
+        Se activa al hacer clic en el icono ☰
+        =====================================================
+    -->
+    <div class="side-menu" id="sideMenu">
+        <!-- Cabecera del menú -->
+        <div class="menu-header">
+            Menu
+        </div>
+        <!-- Lista de categorías disponibles -->
+        <div class="menu-items">
+            <div class="menu-item">Grocery</div>
+            <div class="menu-item">Premium Fruits</div>
+            <div class="menu-item">Home & Kitchen</div>
+            <div class="menu-item">Fashion</div>
+            <div class="menu-item">Electronics</div>
+            <div class="menu-item">Beauty</div>
+            <div class="menu-item">Home Improvement</div>
+            <div class="menu-item">Sports, Toys & Luggage</div>
+        </div>
+    </div>
+
+    <!-- 
+        =====================================================
+        CAPA DE FONDO (OVERLAY) - Oscurece el contenido cuando hay un modal abierto
+        Se activa junto con el menú o el carrito
+        =====================================================
+    -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <!-- 
+        =====================================================
+        CARRITO LATERAL (CART SIDEBAR) - Muestra los productos seleccionados
+        Se desliza desde la derecha al hacer clic en el icono del carrito
+        =====================================================
+    -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <!-- Cabecera del carrito con botón para cerrar -->
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <span class="close-cart" onclick="toggleCart()">✕</span>
+        </div>
+        <!-- Contenedor dinámico para los items del carrito -->
+        <div class="cart-items" id="cartItems">
+            <!-- Los items se generarán dinámicamente con JavaScript -->
+        </div>
+        <!-- Total de la compra (se actualiza dinámicamente) -->
+        <div class="cart-total" id="cartTotal">
+            Total: $0
+        </div>
+        <!-- Botón para proceder al pago -->
+        <button class="checkout-btn" onclick="checkout()">Proceder al Pago</button>
+    </div>
+
+    <!-- 
+        =====================================================
+        MODAL DE PRODUCTO - Vista detallada del producto
+        Se abre al hacer clic en cualquier tarjeta de producto
+        =====================================================
+    -->
+    <div class="product-modal" id="productModal">
+        <!-- Botón para cerrar el modal -->
+        <span class="modal-close" onclick="closeModal()">✕</span>
+        <!-- Contenedor dinámico para la información del producto -->
+        <div class="modal-content" id="modalContent">
+            <!-- El contenido se carga dinámicamente según el producto seleccionado -->
+        </div>
+    </div>
+
+    <!-- 
+        =====================================================
+        CONTENIDO PRINCIPAL (MAIN CONTENT)
+        Aquí se muestran todas las secciones de la tienda
+        =====================================================
+    -->
+    <div class="container">
+        <!-- 
+            =====================================================
+            BANNER PROMOCIONAL - Sección destacada con ofertas
+            Incluye contador regresivo y llamado a la acción
+            =====================================================
+        -->
+        <div class="banner">
+            <div class="banner-content">
+                <!-- Título principal del banner -->
+                <h2>Best Deal Online on smart watches</h2>
+                <!-- Contador regresivo (se actualiza con JavaScript) -->
+                <div class="timer" id="timer">08:26:00</div>
+                <!-- Etiqueta de oferta destacada -->
+                <div class="offer-tag">UP to 80% OFF</div>
+                <!-- Subtítulo promocional -->
+                <p style="margin-top: 20px;">Grab the best deal on Smartphones</p>
+            </div>
+            <!-- Imagen ilustrativa del banner (emojis como placeholders) -->
+            <div class="banner-image">
+                ⌚
+            </div>
+        </div>
+
+        <!-- 
+            =====================================================
+            SECCIÓN DE OFERTAS ESPECIALES
+            Muestra los productos con descuento
+            =====================================================
+        -->
+        <div class="section-title">
+            <h3>Ofertas Especiales</h3>
+            <a href="#" class="view-all">View All ></a>
+        </div>
+
+        <!-- Grid donde se renderizan las tarjetas de ofertas -->
+        <div class="products-grid" id="offersGrid"></div>
+
+        <!-- 
+            =====================================================
+            SECCIÓN DE CATEGORÍAS
+            Navegación rápida por categorías de productos
+            =====================================================
+        -->
+        <div class="section-title">
+            <h3>Shop From Top Categories</h3>
+            <a href="#" class="view-all">View All ></a>
+        </div>
+
+        <!-- Grid de categorías interactivas -->
+        <div class="categories-grid">
+            <!-- Cada categoría tiene un emoji representativo y nombre -->
+            <div class="category-card" onclick="filterCategory('Mobile')">
+                <div class="category-icon">📱</div>
+                <div class="category-name">Mobile</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Cosmetics')">
+                <div class="category-icon">💄</div>
+                <div class="category-name">Cosmetics</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Electronics')">
+                <div class="category-icon">💻</div>
+                <div class="category-name">Electronics</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Furniture')">
+                <div class="category-icon">🪑</div>
+                <div class="category-name">Furniture</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Watches')">
+                <div class="category-icon">⌚</div>
+                <div class="category-name">Watches</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Decor')">
+                <div class="category-icon">🏺</div>
+                <div class="category-name">Decor</div>
+            </div>
+            <div class="category-card" onclick="filterCategory('Accessories')">
+                <div class="category-icon">🕶️</div>
+                <div class="category-name">Accessories</div>
+            </div>
+        </div>
+
+        <!-- 
+            =====================================================
+            SECCIÓN DE MARCAS DE ELECTRÓNICA
+            Productos destacados de electrónica
+            =====================================================
+        -->
+        <div class="section-title">
+            <h3>Top Electronics Brands</h3>
+            <a href="#" class="view-all">View All ></a>
+        </div>
+
+        <!-- Grid donde se renderizan los productos electrónicos -->
+        <div class="products-grid" id="electronicsGrid"></div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="js/app.js"></script>
+</body>
+</html>
