@@ -1,0 +1,71 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.products-section {
+  margin: 60px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #ff0844 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.section-line {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #00f2fe, #ff0844);
+  margin: 0 auto;
+  border-radius: 3px;
+  animation: pulse 2s infinite;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .products-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,252 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: var(--transition);
+  color: var(--primary);
+}
+
+.menu-btn:hover {
+  background: rgba(0, 242, 254, 0.1);
+  transform: scale(1.05);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo-neon {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--neon-glow);
+}
+
+.logo-highlight {
+  color: #ff0844;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+.search-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.2), transparent);
+  border-radius: 50px;
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.search-input:focus + .search-glow {
+  opacity: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.auth-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: 50px;
+  padding: 8px 16px;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.auth-btn:hover {
+  background: rgba(0, 242, 254, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.cart-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition);
+  color: var(--primary);
+}
+
+.cart-btn:hover {
+  background: rgba(0, 242, 254, 0.1);
+  transform: scale(1.1);
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ff0844, #ffb199);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+  .auth-text {
+    display: none;
+  }
+  
+  .logo {
+    font-size: 18px;
+  }
+  
+  .search-container {
+    max-width: 300px;
+  }
+}
+
+
+/* User Dropdown Menu */
+.user-menu-container {
+  position: relative;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.98), rgba(20, 20, 40, 0.98));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: 15px;
+  padding: 15px;
+  min-width: 250px;
+  z-index: 1000;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.user-avatar {
+  font-size: 40px;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.user-email {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.3), transparent);
+  margin: 10px 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 8, 68, 0.2);
+  transform: translateX(5px);
+}
