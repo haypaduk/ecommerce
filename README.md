@@ -31,5 +31,5 @@ Desarrollar una tienda en línea funcional, segura y fácil de usar, que ofrezca
 ## 🧭 Cómo colaborar
 1. Clona este repositorio:
 ```bash
-   git clone https://github.com/haypaduk/learnify.git
+   https://github.com/haypaduk/ecommerce.git
 ```
