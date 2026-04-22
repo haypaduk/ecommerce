@@ -1,44 +1,35 @@
-# 🚀 Red Social Universitaria  
+# 🛒 GlobalMart
 
-¡Bienvenidos al proyecto **Red Social Universitaria**! 🎓💬  
-Un espacio donde los estudiantes pueden conectar, compartir ideas y colaborar en proyectos académicos.  
-
----
-
-🌟 **Mensaje final**  
-*"El talento gana partidos, pero el trabajo en equipo y la inteligencia ganan campeonatos." – Michael Jordan* 🏀
+¡Bienvenidos al proyecto **GlobalMart**! 🌐  
+Una plataforma de comercio electrónico donde los usuarios pueden explorar productos, gestionar su carrito de compras y realizar pedidos de forma segura y sencilla.
 
 ---
 
-## 💡 Nuestra misión  
-Crear una red que promueva la comunicación, el aprendizaje colaborativo y la innovación entre alumnos y docentes. 🤝  
+
+## 💡 ¿Qué queremos lograr?
+Desarrollar una tienda en línea funcional, segura y fácil de usar, que ofrezca una experiencia de compra completa: desde el registro del usuario hasta la confirmación del pedido. 🛍️
 
 ---
 
-## 👨‍💻 Equipo de desarrollo  
-✨ **Equipo Smart Devs** ✨  
-- 🧠 **Hay Paduk Vap** – Líder del proyecto y desarrollador principal.  
-- ⚙️ **[Nombre de compañero 1]** – Backend y base de datos.  
-- 🎨 **[Nombre de compañero 2]** – Frontend y diseño UI/UX.  
-- 🧩 **[Nombre de compañero 3]** – Integración y testing.  
+## 👨‍💻 Equipo de desarrollo
+
+- 🧠 **Ugalde Zarza Marcos Jesús** – Líder del proyecto y desarrollador principal.
+- ⚙️ **González Colín Nataly** – Backend y base de datos.
+- 🎨 **Martínez Rojas Estefanía** – Diseño UI/UX.
+- 🎨 **ColÍn Martinez Josef Benjamín** – Frontend.
+- 🧩 **Cid Flores Gustavo Angel** – Documentación.
 
 ---
 
-## 🛠️ Tecnologías que usaremos  
-- 🧬 **Python / JS**  
-- 🗄️ **MySQL / MongoDB**  
-- 🎨 **HTML / CSS**  
-- ☁️ **Render** (para el despliegue)  
+## 🛠️ Tecnologías que usaremos
+- 🧬 **Python / JS**
+- 🗄️ **MySQL / MongoDB**
+- 🎨 **HTML / CSS**
 
 ---
 
-## 🚧 Estado del proyecto  
-🔹 **En desarrollo** 🧑‍💻  
-Cada integrante trabaja en su módulo y hacemos integraciones semanales.  
-
----
-
-## 🧭 Cómo colaborar  
-1. Clona este repositorio:  
-   ```bash
+## 🧭 Cómo colaborar
+1. Clona este repositorio:
+```bash
    git clone https://github.com/haypaduk/learnify.git
+```
