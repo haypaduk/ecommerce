@@ -1,0 +1,212 @@
+.banner-container {
+  margin: 20px;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.banner-glass {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(255, 8, 68, 0.05));
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-glass::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.1), transparent);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.banner-content {
+  flex: 1;
+  z-index: 1;
+}
+
+.banner-badge {
+  display: inline-block;
+  background: rgba(255, 8, 68, 0.2);
+  border: 1px solid #ff0844;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.badge-icon {
+  margin-right: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+.banner-title {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.timer-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.timer-unit {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+.timer-number {
+  font-size: 48px;
+  font-weight: 800;
+  font-family: monospace;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.timer-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.timer-separator {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ff0844;
+}
+
+.offer-tag {
+  background: linear-gradient(135deg, #ff0844, #ffb199);
+  border-radius: 50px;
+  padding: 12px 30px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.offer-percent {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.banner-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.shop-now-btn {
+  position: relative;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.shop-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.shop-now-btn:hover .btn-glow {
+  left: 100%;
+}
+
+.banner-visual {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-device {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.device-ring {
+  width: 150px;
+  height: 150px;
+  border: 3px solid rgba(0, 242, 254, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  animation: pulse 2s infinite;
+}
+
+.device-icon {
+  font-size: 120px;
+  filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.5));
+}
+
+@media (max-width: 768px) {
+  .banner-glass {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  
+  .banner-title {
+    font-size: 32px;
+  }
+  
+  .timer-number {
+    font-size: 32px;
+  }
+  
+  .timer-unit {
+    padding: 10px 15px;
+  }
+  
+  .device-icon {
+    font-size: 80px;
+  }
+}
